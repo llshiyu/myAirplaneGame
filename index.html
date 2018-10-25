@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>飞机游戏</title>
+    <script>
+        ;(function () {
+            var defaultW = 750, u = navigator.userAgent;
+            if (/(Android)/i.test(u)) { //Android
+                var version = u.substr(u.indexOf('Android') + 8, 3);
+                if (version > 2.3) {
+                    var phoneScale = parseInt(window.screen.width) / defaultW;
+                    document.write('<meta name="viewport" content=" user-scalable=no, width=' + defaultW + '", minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+                } else {
+                    document.write('<meta name="viewport" content="width=' + defaultW + '">');
+                }
+            } else if (/(iPhone|iPad|iPod|iOS)/i.test(u)) {  //ios
+                document.write('<meta name="viewport" content="width=' + defaultW + ', user-scalable=no">');
+            } else { // PC
+                document.write('<style>.game{width: 750px!important;height: 1200px!important; transform:scale(0.4,0.4); -webkit-transform:scale(0.4,0.4); webkit-transform-origin: 50% 30px;transform-origin: 50% 30px} .pack-pack{height: 500px!important;}</style>');
+            }
+
+        })();
+    </script>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="grey">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="game-box">
+<div class="game">
+
+</div>
+</div>
+</body>
+</html>
